@@ -47,9 +47,12 @@ h2{
 }
 
 .header{
+    background-color: #0C0C0E;
+}
+
+.header-container{
     max-width: 1440px;
     margin: auto;
-    background-color: #0C0C0E;
     display: flex;
     justify-content: space-between;
 }
@@ -69,7 +72,38 @@ h2{
 .nav-menu-link:hover{
     text-decoration: underline;
     text-underline-position: under;
+    cursor: pointer;
 } 
-.profile{
+.profile-icon{
     width: 30px;
+}
+
+.welcome{
+    background: linear-gradient(#0C0C0E 0%, #0C0C0E40 50%, #ffffff 51%);
+}
+
+.welcome-container{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    height: 600px;
+    max-width: 1440px;
+    background-image: url("/library/assets/png/Welcome\ \(3\).png");
+}
+.welcome-block{
+    background-color: #0C0C0E;
+    width: 600px;
+    margin-top: 60px;
+    height: 220px;
+}
+h3{
+    color: #ffffff;
+    text-shadow: 0 4px 4px #00000040;
+    font-family: 'Forum';
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-top: 35px;
+    font-weight: normal;
 }
