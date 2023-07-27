@@ -46,7 +46,7 @@ h2{
     letter-spacing: 2px;
     text-shadow: 0 4px 4px #00000040;
     font-weight: 100;
-    margin-top: 20px;
+    margin-top: 16px;
 }
 
 h6{
@@ -231,8 +231,9 @@ h3{
 }
 
 .favorite-line{
-    margin-top: -14px;
+    margin-top: -12px;
     margin-bottom: 39px;
+    background-color: #BB945F;
 }
 
 .favorite-season-title{
@@ -249,7 +250,7 @@ h3{
 
 .favorite-season-choice-btn{
     display: flex;
-    margin-top: 7px;
+    margin-top: 8px;
     margin-left: 1px;
     height: 40px;
     align-items: center;
@@ -650,10 +651,11 @@ h3{
 
 .card-input:focus::placeholder{
     color: transparent;
+    text-shadow: none;
     border-color: #BB945F;
 }
 
-.card-input:focus:{
+.card-input:focus{
     color: #BB945F;
     border-color: #BB945F;
 }
@@ -719,4 +721,79 @@ h3{
     border-color: #BB945F;
     background-color: #BB945F;
     transition: all 1s;
+}
+
+                     /*     FOOTER      */
+
+.footer{
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #0C0C0E;
+    margin-top: 40px;
+}
+
+.footer-contact{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 20px;
+}
+
+.footer-contact-adress{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.footer-adress-link{
+    font-size: 15px;
+    line-height: 20px;
+    margin-top: 20px;
+}
+
+.footer-contact-sns{
+    display: flex;
+    gap: 16px;
+    margin-top: 11px;
+
+}
+
+.footer-adress-work{
+    text-align: end;
+    margin-right: 20px;
+    margin-top: 6px;
+}
+
+.time-work{
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.footer-line{
+    background-color: white;
+    width: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 16px;
+}
+
+.last-string{
+    display: grid;
+    grid-template-columns: 122px auto 119px;
+    margin-left: 22px;
+    margin-right: 22px;
+    height: 106px;
+    align-items: center;
+    margin-top: -7px;
+}
+
+.year{
+    color: #ffffff;
+    letter-spacing: 1.1px;
+}
+
+.last-string-link{
+    letter-spacing: 2px;
+    text-align: center;
 }
