@@ -155,14 +155,6 @@ h3{
     font-weight: normal;
 }
 
-td{
-    font-family: 'Inter';
-    font-size: 20px;
-    line-height: 40px;
-    letter-spacing: 2.3px;
-    font-weight: 100;
-}
-
                      /*     ABOUT      */
 
 .about{
@@ -520,4 +512,45 @@ td{
 }
 
                      /*     CONTACTS      */
-                     
+
+.contacts{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1440px;
+    text-align: center;
+    margin-top: 24px;
+}
+
+.contacts-line{
+    margin-top: -14px;
+}
+.contacts-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contacts-list{
+    text-align: left;
+    padding-left: 20px;
+    display: grid;
+    grid-template-rows: 91px 61px 61px 66px 73px;
+}
+
+.contacts-title{
+    font-size: 20px;
+}
+
+.contacts-phone{
+    letter-spacing: 2px;
+}
+.contacts-name{
+    font-family: 'Inter';
+    font-size: 20px;
+    line-height: 40px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.contacts-map{
+    margin-top: 30px;
+}
