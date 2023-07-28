@@ -85,7 +85,9 @@ h5{
     letter-spacing: 2px;
 }
 
-
+li{
+    list-style: none;
+}
 
                      /*     HEADER      */
 
@@ -98,7 +100,6 @@ h5{
     margin: auto;
     display: flex;
     justify-content: space-between;
-    padding-top: 5px;
 }
 
 .nav-menu{
@@ -136,6 +137,7 @@ h5{
     height: 600px;
     max-width: 1440px;
     background-image: url("/library/assets/png/Welcome\ \(3\).png");
+    margin-bottom: 20px;
 }
 .welcome-block{
     background-color: #0C0C0E;
@@ -161,6 +163,7 @@ h3{
     max-width: 1440px;
     margin: auto;
     text-align: center;
+    margin-bottom: 20px;
 }
 .about-line{
     margin-top: -13px;
@@ -231,9 +234,8 @@ h3{
 }
 
 .favorite-line{
-    margin-top: -12px;
+    margin-top: -14px;
     margin-bottom: 39px;
-    background-color: #BB945F;
 }
 
 .favorite-season-title{
@@ -401,7 +403,6 @@ h3{
 
 .shop-line{
     margin-top: -14px;
-    background-color: #BB945F;
 }
 
 .coffee-shop-description{
@@ -500,11 +501,6 @@ h3{
     list-style-type: none;
 }
 
-.menu-line{
-    width: 100px;
-    background-color: #BB945F;
-    margin-top: 38px;
-}
 
 .coffee-menu-elem3-right{
     font-family: 'Forum';
