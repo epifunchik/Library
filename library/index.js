@@ -29,16 +29,36 @@ burger.addEventListener('click', function() {
     navLink[2].classList.toggle('active');
     navLink[3].classList.toggle('active');
     navLink[4].classList.toggle('active');
-   
-    //navBurger.classList.toggle('hidden');
 })
 
-//navigation.addEventListener('click', function() {
-//     menu.classList.toggle('active')
-//     span.classList.toggle('active');
-//     navigation.classList.add('hidden');
-//     navLink[0].classList.toggle('active');
-//     navLink[1].classList.toggle('active');
-//     navLink[2].classList.toggle('active');
-// })
+navigation.addEventListener('click', function() {
+    menu.classList.remove('active')
+    span.classList.remove('active');
+    navigation.classList.add('hidden');
+    burger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    profileIcon.classList.toggle('active');
+})
+
+document.addEventListener('click', event =>{
+    const clickNoNavigation = !event.composedPath().includes(navigation);
+    const clickNoBurger = !event.composedPath().includes(burger);
+    const clickNoSpan = !event.composedPath().includes(span);
+    const clickNoNavMenu = !event.composedPath().includes(navMenu);
+    const clickNoMenu = !event.composedPath().includes(menu);
+    if (clickNoNavigation || clickNoBurger || clickNoSpan || clickNoNavMenu || clickNoMenu){
+        if (navigation.classList.contains('active')){
+            navigation.classList.add('active')
+            // navigation.classList.toggle('hidden');
+            console.log('6547')
+        }
+        else{
+        navigation.classList.toggle('active');
+        
+        console.log('hbvm')
+    }
+}
+    console.log(event)
+    console.log(clickNoNavigation)
+})
 console.log(navLink)
