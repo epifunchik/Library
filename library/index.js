@@ -13,49 +13,49 @@ const navigation = document.querySelector('.nav-menu-sections');
 const span = document.querySelector('span');
 const navLink = document.querySelectorAll('.nav-menu-link');
 
-burger.addEventListener('click', function() {
-    burger.classList.toggle('active');
-    menu.classList.toggle('active');
-    span.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    profileIcon.classList.toggle('active');
-    if (navigation.classList.contains('active')){
-        navigation.classList.remove('active');
-        navigation.classList.toggle('hidden');
-    }
-    navigation.classList.add('active');
-    navLink[0].classList.toggle('active');
-    navLink[1].classList.toggle('active');
-    navLink[2].classList.toggle('active');
-    navLink[3].classList.toggle('active');
-    navLink[4].classList.toggle('active');
-})
+// burger.addEventListener('click', function() {
+//     burger.classList.toggle('active');
+//     menu.classList.toggle('active');
+//     span.classList.toggle('active');
+//     navMenu.classList.toggle('active');
+//     profileIcon.classList.toggle('active');
+//     if (navigation.classList.contains('active')){
+//         navigation.classList.remove('active');
+//         navigation.classList.toggle('hidden');
+//     }
+//     navigation.classList.add('active');
+//     navLink[0].classList.toggle('active');
+//     navLink[1].classList.toggle('active');
+//     navLink[2].classList.toggle('active');
+//     navLink[3].classList.toggle('active');
+//     navLink[4].classList.toggle('active');
+// })
 
-navigation.addEventListener('click', function() {
-    menu.classList.remove('active')
-    span.classList.remove('active');
-    navigation.classList.add('hidden');
-    burger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    profileIcon.classList.toggle('active');
-})
+// navigation.addEventListener('click', function() {
+//     menu.classList.remove('active')
+//     span.classList.remove('active');
+//     navigation.classList.add('hidden');
+//     burger.classList.toggle('active');
+//     navMenu.classList.toggle('active');
+//     profileIcon.classList.toggle('active');
+// })
 
-document.addEventListener('click', event =>{
-    const clickNoNavigation = !event.composedPath().includes(navigation);
-    const clickNoBurger = !event.composedPath().includes(burger);
-    const clickNoSpan = !event.composedPath().includes(span);
-    const clickNoNavMenu = !event.composedPath().includes(navMenu);
-    const clickNoMenu = !event.composedPath().includes(menu);
-    if (clickNoNavigation || clickNoBurger || clickNoSpan || clickNoNavMenu || clickNoMenu){
-        if (navigation.classList.contains('active')){
-            navigation.classList.add('active')
-            // navigation.classList.toggle('hidden');
-            console.log('6547')
-        }
-        else{
-        navigation.classList.toggle('active');
+// document.addEventListener('click', event =>{
+//     const clickNoNavigation = !event.composedPath().includes(navigation);
+//     const clickNoBurger = !event.composedPath().includes(burger);
+//     const clickNoSpan = !event.composedPath().includes(span);
+//     const clickNoNavMenu = !event.composedPath().includes(navMenu);
+//     const clickNoMenu = !event.composedPath().includes(menu);
+//     if (clickNoNavigation || clickNoBurger || clickNoSpan || clickNoNavMenu || clickNoMenu){
+//         if (navigation.classList.contains('active')){
+//             navigation.classList.add('active')
+//             // navigation.classList.toggle('hidden');
+//             console.log('6547')
+//         }
+//         else{
+//         navigation.classList.toggle('active');
         
-        console.log('hbvm')
+//         console.log('hbvm')
     }
 }
     console.log(event)

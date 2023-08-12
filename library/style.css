@@ -333,6 +333,9 @@ h3{
     align-items: center;
     justify-content: center;
 }
+.about-btn-area.none{
+    display: none;
+} 
 
 .about-btn-area:hover{
     cursor: pointer;
@@ -382,6 +385,9 @@ h3{
         background-color: transparent;
         margin-top: 43px;
     }
+    .about-btn-area.none{
+        display: block;
+    } 
 }
 
                      /*     FAVORITE      */
@@ -470,20 +476,6 @@ h3{
     margin-top: 30px;
     max-height: 1150px;
     overflow: hidden;
-}
-
-@media screen and (max-width: 1230px) {
-    .favorite-container{
-        margin-left: auto;
-        margin-right: auto;
-        max-height: 2360px;
-        justify-content: center;
-        margin-bottom: -20px;
-    }
-
-    .favorite-season-choice{
-        margin-top: -2px;
-    }
 }
 
 .favorite-books-container{
@@ -575,6 +567,25 @@ h3{
     right: 0;
 }
 
+@media screen and (max-width: 1230px) {
+    .favorite-container{
+        margin-left: auto;
+        margin-right: auto;
+        max-height: 2360px;
+        justify-content: center;
+        margin-bottom: -20px;
+    }
+
+    .favorite-season-choice{
+        margin-top: -2px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .favorite-season-choice{
+        width: 100%;
+    }
+}
 
 
                      /*     COFFEE SHOP      */
@@ -763,7 +774,7 @@ h3{
     margin-top: 30px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1236px) {
     .contacts{
         margin-top: 22px;
     }
@@ -777,6 +788,12 @@ h3{
         margin-bottom: 49px;
     }
 
+}
+
+@media screen and (max-width: 760px) {
+    .map{
+        width: 100%;
+    }
 }
 
                      /*     LIBRARY CARD      */
