@@ -126,12 +126,251 @@ li{
     text-underline-position: under;
     cursor: pointer;
     transition: all 5s;
-} 
+}
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+    /*                                drop-menu */
+
+
+.login-menu{
+    background-color: #ffffff;
+    position: fixed;
+    top: 63px;
+    right: 171px;
+    width: 80px;
+    height: 115px;
+    text-align: center;
+    display: none;
+}
+
+.login-profile-title{
+    font-weight: bold;
+    font-size: 15px;
+    color: #000000;
+    margin-top: -4px;
+}
+
+.login-line{
+    background-color: #BB945F;
+    margin-top: -22px;
+    width: 40px;
+    height: 0.5px;
+}
+
+.login-profile-text{
+    font-size: 15px;
+    color: #000000;
+    margin-top: 14px;
+    line-height: 20px;
+    margin-bottom: -3px;
+}
+
+.login-profile-text:hover{
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+/*                                              LOGIN         */
+
+.login{
+    width: 250px;
+    height: 262px;
+    background-color: #ffffff;
+    position: fixed;
+    top: 60px;
+    right: 170px;
+    display: none;
+}
+
 .profile-icon{
     width: 30px;
 }
+.profile-icon:hover{
+    cursor: pointer;
+}
 
-                      /*   menu-burger    */
+.login-title{
+    margin-top: 20px;
+    font-family: 'Forum';
+    line-height: 20px;
+    letter-spacing: 0.4px;
+    text-align: center;
+}
+
+.login-close{
+    top: 13px;
+    right: 13px;
+    position: absolute;
+}
+
+.login-close:hover{
+    cursor: pointer;
+}
+
+.login-info-enter{
+    line-height: 20px;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    text-align: left;
+    padding-left: 26px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.login-info-enter-field{
+    border-color: #BB945F;
+    width: 195px;
+    border-width: 1px;
+    margin-left: 25px;
+}
+
+.login-info-enter-field::placeholder{
+    border-color: #BB945F;
+}
+
+.login-btn{
+    font-size: 10px;
+    font-family: 'Inter';
+    font-weight: bold;
+    background-color: #ffffff;
+    border-width: 1.5px;
+    color: #0C0C0E;
+    width: 75px;
+    height: 30px;
+    margin-left: 25px;
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+.login-btn:hover{
+    cursor: pointer;
+    background-color: #BB945F;
+    border-color: #BB945F;
+    transition: all 1s;
+}
+
+.login-bottom-text{
+    font-size: 10px;
+    margin-left: 25px;
+    margin-top: -8px;
+}
+
+.login-register-link{
+    font-size: 10px;
+    color: #000000;
+    font-family: 'Inter';
+    text-decoration: underline;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-underline-position: under;
+}
+
+.login-register-link:hover{
+    cursor: pointer;
+}
+
+/*                                              REGISTER         */
+
+.register{
+    width: 250px;
+    height: 382px;
+    background-color: #ffffff;
+    position: fixed;
+    top: 60px;
+    right: 170px;
+}
+
+.register-title{
+    margin-top: 20px;
+    font-family: 'Forum';
+    line-height: 20px;
+    letter-spacing: 0.4px;
+    text-align: center;
+}
+
+.login-close{
+    top: 13px;
+    right: 13px;
+    position: absolute;
+}
+
+.login-close:hover{
+    cursor: pointer;
+}
+
+.register-info-enter{
+    line-height: 20px;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    text-align: left;
+    padding-left: 26px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.register-info-enter-field{
+    border-color: #BB945F;
+    width: 195px;
+    border-width: 1px;
+    margin-left: 25px;
+}
+
+.register-info-enter-field:focus{
+    color: #BB945F;
+    border-color: #BB945F;
+}
+
+.register-info-enter-field:focus::placeholder{
+    border-color: #BB945F;
+}
+
+.register-btn{
+    font-size: 10px;
+    font-family: 'Inter';
+    font-weight: bold;
+    background-color: #ffffff;
+    border-width: 1.5px;
+    color: #0C0C0E;
+    width: 75px;
+    height: 30px;
+    margin-left: 25px;
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+.register-btn:hover{
+    cursor: pointer;
+    background-color: #BB945F;
+    border-color: #BB945F;
+    transition: all 1s;
+}
+
+.register-bottom-text{
+    font-size: 10px;
+    margin-left: 25px;
+    margin-top: -8px;
+}
+
+.register-login-link{
+    font-size: 10px;
+    color: #000000;
+    font-family: 'Inter';
+    text-decoration: underline;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-underline-position: under;
+}
+
+.register-login-link:hover{
+    cursor: pointer;
+}
+
+
+
+                                     /*   menu-burger    */
 
 
 .burger{
@@ -204,7 +443,6 @@ li{
 
 }
 
-
 span.active{
     rotate: 45deg;
     transition: all, 0.5s;
@@ -260,7 +498,7 @@ span.active{
 }
 
 
-                     /*     WELCOME      */
+                              /*     WELCOME      */
 
 .welcome{
     background: linear-gradient(#0C0C0E 0%, #0C0C0E40 50%, #ffffff 51%);
@@ -433,7 +671,7 @@ h3{
     } 
 }
 
-                     /*     FAVORITE      */
+                                 /*     FAVORITE      */
 
 .favorite{
     max-width: 1440px;
