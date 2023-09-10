@@ -25,6 +25,11 @@ body{
     width: 100%;
 }
 
+.body-wrapper.shadow{
+    opacity: 80%;
+    color: #0C0C0E;
+}
+
 h1{
     color: #ffffff;
     font-family: 'Forum';
@@ -134,7 +139,7 @@ li{
     align-items: center;
     justify-content: center;
 }
-    /*                                drop-menu */
+    /*                                drop-menu login */
 
 
 .login-menu{
@@ -146,6 +151,12 @@ li{
     height: 115px;
     text-align: center;
     display: none;
+    transition: all 3s;
+}
+
+.login-menu.active{
+    display: block;
+    transition: all 3s;
 }
 
 .login-profile-title{
@@ -177,6 +188,50 @@ li{
     text-underline-position: under;
 }
 
+   /*                                drop-menu profile */
+
+
+.profile-menu{
+    background-color: #ffffff;
+    position: fixed;
+    top: 63px;
+    right: 171px;
+    width: 80px;
+    height: 115px;
+    text-align: center;
+    display: none;
+}
+
+.profile-title{
+    font-weight: bold;
+    font-size: 15px;
+    color: #000000;
+    margin-top: -4px;
+}
+
+.profile-line{
+    background-color: #BB945F;
+    margin-top: -22px;
+    width: 40px;
+    height: 0.5px;
+}
+
+.profile-text{
+    font-size: 15px;
+    color: #000000;
+    margin-top: 14px;
+    line-height: 20px;
+    margin-bottom: -3px;
+}
+
+.profile-text:hover{
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+
 /*                                              LOGIN         */
 
 .login{
@@ -187,6 +242,10 @@ li{
     top: 60px;
     right: 170px;
     display: none;
+}
+
+.login.active{
+    display: block;
 }
 
 .profile-icon{
@@ -230,8 +289,24 @@ li{
     margin-left: 25px;
 }
 
-.login-info-enter-field::placeholder{
+.login-info-enter-field:focus{
+    color: #BB945F;
     border-color: #BB945F;
+    outline: #bb945f;
+    outline-style: auto;
+}
+
+.login-info-enter-field:invalid{
+    color: #BB945F;
+    border-color: #c6124b;
+    outline: #c6124b;
+    outline-style: auto;
+}
+.login-info-enter-field:valid{
+    color: #BB945F;
+    border-color: #BB945F;
+    outline: #BB945F;
+    outline-style: auto;
 }
 
 .login-btn{
@@ -283,6 +358,11 @@ li{
     position: fixed;
     top: 60px;
     right: 170px;
+    display: none;
+}
+
+.register.active{
+    display: block;
 }
 
 .register-title{
@@ -322,10 +402,15 @@ li{
 .register-info-enter-field:focus{
     color: #BB945F;
     border-color: #BB945F;
+    outline: #bb945f;
+    outline-style: auto;
 }
 
 .register-info-enter-field:focus::placeholder{
     border-color: #BB945F;
+}
+.register-info-enter-field:focus::placeholder:invalid{
+    border-color: red;
 }
 
 .register-btn{
@@ -440,7 +525,17 @@ li{
         display: block;
         padding-right: 40px;
     }
+    .login-menu.active{
+        right: 80px;
+    }
 
+    .login.active{
+        right: 0px;
+    }
+
+    .register.active{
+        right: 0;
+    }
 }
 
 span.active{

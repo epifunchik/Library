@@ -26,6 +26,13 @@ burger.addEventListener('click', function() {
     navLink[2].classList.toggle('active');
     navLink[3].classList.toggle('active');
     navLink[4].classList.toggle('active');
+
+    
+
+    loginMenu.classList.remove('active');
+    bodyWrapper.classList.remove('shadow');
+    registerBlock.classList.remove('active');
+    loginBlock.classList.remove('active');
 })
 
 navigation.addEventListener('click', function() {
@@ -43,17 +50,22 @@ navigation.addEventListener('click', function() {
 })
 
 welcomeContainer.addEventListener('click', function() {
-    burger.classList.toggle('active');
-    menu.classList.toggle('active');
-    span.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    profileIcon.classList.toggle('active');
-    navigation.classList.toggle('active');
-    navLink[0].classList.toggle('active');
-    navLink[1].classList.toggle('active');
-    navLink[2].classList.toggle('active');
-    navLink[3].classList.toggle('active');
-    navLink[4].classList.toggle('active');
+    burger.classList.remove('active');
+    menu.classList.remove('active');
+    span.classList.remove('active');
+    navMenu.classList.remove('active');
+    profileIcon.classList.remove('active');
+    navigation.classList.remove('active');
+    navLink[0].classList.remove('active');
+    navLink[1].classList.remove('active');
+    navLink[2].classList.remove('active');
+    navLink[3].classList.remove('active');
+    navLink[4].classList.remove('active');
+
+    loginMenu.classList.remove('active');
+    bodyWrapper.classList.remove('shadow')
+    registerBlock.classList.remove('active');
+    loginBlock.classList.remove('active');
 })
 
 
@@ -271,4 +283,82 @@ sliderBtnFavorite[0].addEventListener('click', (e) => {
       flag = false;
     }
   });
-  
+
+
+
+  // login
+//   const burger = document.querySelector('.burger');
+//   const menu = document.querySelector('.menu-btn');
+//   const navMenu = document.querySelector('.nav-menu');
+//   const profileIcon = document.querySelector('.profile-icon');
+//   const navigation = document.querySelector('.nav-menu-sections');
+//   const span = document.querySelector('span');
+//   const navLink = document.querySelectorAll('.nav-menu-link');
+  const welcomeSection= document.querySelector('.welcome');
+
+const loginMenu = document.querySelector('.login-menu');
+const profileMenu = document.querySelector('.profile-menu');
+const loginBlock = document.querySelector('.login');
+const registerBlock = document.querySelector('.register');
+const bodyWrapper = document.querySelector('.body-wrapper');
+const closeBtn = document.querySelectorAll('.login-close');
+
+console.log(closeBtn)
+profileIcon.addEventListener('click', function(){
+    loginMenu.classList.toggle('active');
+    bodyWrapper.classList.toggle('shadow')
+
+    burger.classList.remove('active');
+    menu.classList.remove('active');
+    span.classList.remove('active');
+    navMenu.classList.remove('active');
+    profileIcon.classList.remove('active');
+    navigation.classList.remove('active');
+    navLink[0].classList.remove('active');
+    navLink[1].classList.remove('active');
+    navLink[2].classList.remove('active');
+    navLink[3].classList.remove('active');
+    navLink[4].classList.remove('active');
+})
+
+const loginLink = document.querySelectorAll('.login-profile-text');
+const loginLinkBottom = document.querySelectorAll('.login-register-link');
+
+console.log(loginLinkBottom)
+loginLink[0].addEventListener('click', function(){
+    loginMenu.classList.remove('active');
+    loginBlock.classList.add('active');
+})
+
+loginLink[1].addEventListener('click', function(){
+    loginMenu.classList.remove('active');
+    registerBlock.classList.add('active');
+})
+
+closeBtn[0].addEventListener('click', function() {
+    loginMenu.classList.remove('active');
+    bodyWrapper.classList.remove('shadow')
+    loginBlock.classList.remove('active');
+    console.log('closeBtn')
+})
+closeBtn[1].addEventListener('click', function() {
+    loginMenu.classList.remove('active');
+    bodyWrapper.classList.remove('shadow')
+    registerBlock.classList.remove('active');
+    console.log('closeBtn')
+})
+
+loginLinkBottom[0].addEventListener('click', function(){
+    loginBlock.classList.remove('active');
+    registerBlock.classList.add('active');
+})
+
+loginLinkBottom[1].addEventListener('click', function(){
+    loginBlock.classList.add('active');
+    registerBlock.classList.remove('active');
+})
+
+// welcomeSection.addEventListener('click', function(){
+//     loginMenu.classList.remove('active');
+//     bodyWrapper.classList.remove('shadow')
+// })
