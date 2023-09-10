@@ -8,6 +8,7 @@
     <title>Library</title>
 </head>
 <body>
+    <div class="body-wrapper">
     <header class="header">
         <div class="header-container">
             <h1>Brooklyn Public Library</h1>
@@ -31,7 +32,45 @@
                         </ul>
                     </nav>
                 </div>
-                <img class="profile-icon" src="../library/assets/svg/icon_profile.svg" alt="profile-icon">
+                <div class="profile">
+                    <img class="profile-icon" src="../library/assets/svg/icon_profile.svg" alt="profile-icon">
+                    <div class="login-menu">
+                        <p class="login-profile-title">Profile</p>
+                        <hr class="login-line">
+                        <p class="login-profile-text">Log In</p>
+                        <p class="login-profile-text">Register</p>
+                    </div>
+                    <div class="profile-menu">
+                        <p class="profile-title">Profile</p>
+                        <hr class="profile-line">
+                        <p class="profile-text">My profile</p>
+                        <p class="profile-text">Log Out</p>
+                    </div>
+                    <div class="login">
+                        <p class="login-title">LOGIN</p>
+                        <img class="login-close" src="../library/assets/png/close_btn.png" alt="close-btn">
+                        <p class="login-info-enter">E-mail or readers card</p>
+                        <input type="email" class="login-info-enter-field" name="login name" maxlength="30" minlength="8">
+                        <p class="login-info-enter">Password</p>
+                        <input type="text" class="login-info-enter-field" name="login password" minlength="8" maxlength="30">
+                        <button class="login-btn">Log In</button>
+                        <p class="login-bottom-text">Don't have an account?&nbsp;&nbsp;&nbsp;&nbsp;<a class="login-register-link">Register</a></p>
+                    </div>
+                    <div class="register">
+                        <p class="register-title">REGISTER</p>
+                        <img class="login-close" src="../library/assets/png/close_btn.png" alt="close-btn">
+                        <p class="register-info-enter">First name</p>
+                        <input type="text" class="register-info-enter-field" name="register first name" minlength="1" maxlength="30">
+                        <p class="register-info-enter">Last name</p>
+                        <input type="text" class="register-info-enter-field" name="register last name" minlength="1" maxlength="30">
+                        <p class="register-info-enter">E-mail</p>
+                        <input type="text" class="register-info-enter-field" name="register e-mail" minlength="8" maxlength="30">
+                        <p class="register-info-enter">Password</p>
+                        <input type="email" class="register-info-enter-field" name="register password" minlength="8" maxlength="30">
+                        <button class="register-btn">Sign Up</button>
+                        <p class="register-bottom-text">Already have an account?&nbsp;&nbsp;&nbsp;&nbsp;<a class="login-register-link">Login</a></p>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -48,15 +87,17 @@
             <hr class="about-line">
             <p class="about-paragraf">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
             <div class="about-img-btn-wrapper">
-                <button class="about-arrow"><img class="arrow" src="../library/assets/svg/Carret_Left.svg" alt="arrow-left"></button>
-                <div class="about-img-container">
-                    <img class="about-img" src="../library/assets/png/image-5.png" alt="image-5">
-                    <img class="about-img" src="../library/assets/png/image-1.png" alt="image-1">
-                    <img class="about-img" src="../library/assets/png/image-2.png" alt="image-2">
-                    <img class="about-img" src="../library/assets/png/image-3.png" alt="image-3">
-                    <img class="about-img" src="../library/assets/png/image-4.png" alt="image-4">
+                <button class="about-arrow prev">&lsaquo;</button>
+                <div class="about-slider-img">
+                    <div class="about-img-container">
+                        <img class="about-img" src="../library/assets/png/image-5.png" alt="image-5">
+                        <img class="about-img" src="../library/assets/png/image-1.png" alt="image-1">
+                        <img class="about-img" src="../library/assets/png/image-2.png" alt="image-2">
+                        <img class="about-img" src="../library/assets/png/image-3.png" alt="image-3">
+                        <img class="about-img" src="../library/assets/png/image-4.png" alt="image-4">
+                    </div>
                 </div>
-                <button class="about-arrow"><img class="arrow" src="../library/assets/svg/Carret_Right.svg" alt="arrow-right"></button>
+                <button class="about-arrow next">&rsaquo;</button>
             </div>
             <div class="about-btn-container">
                 <div class="about-btn-area none">
@@ -149,7 +190,7 @@
                         <p class="favorite-book-description">A Timely And Revelatory New Biography Of Queen Elizabeth (And Her Family) 
                             Exploring How The Windsors Have Evolved And Thrived As The Modern World Has Changed Around Them.
                         </p>
-                        <button class="favorite-book-btn-buy own">Own</button>
+                        <button class="favorite-book-btn-buy">Buy</button>
                     </div>
                     <img class="favorite-books-img" src="../library/assets/png/book-3.png" alt="book-winter">
                 </div>
@@ -467,5 +508,6 @@
         </div>
     </footer>
     <script src="/library/index.js"></script>
+</div>
 </body>
 </html>
