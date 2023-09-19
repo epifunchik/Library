@@ -49,20 +49,24 @@ h1{
 .play{
     grid-area: a;
     width: 70px;
+    cursor: pointer;
 }
 .pause{
     display: none;
+    cursor: pointer;
     grid-area: a;
     width: 70px;
 }
 .prev{
     grid-area: b;
+    cursor: pointer;
     width: 40px;
 }
 
 .next{
     grid-area: d;
     width: 40px;
+    cursor: pointer;
 }
 
 .name{
@@ -76,6 +80,7 @@ h1{
     grid-area: e;
     color: white;
     font-size: 0.7em;
+    text-align: end;
 }
 
 .end{
