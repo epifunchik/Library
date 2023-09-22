@@ -8,12 +8,14 @@ const play = document.querySelector('.play'),
  nameArtist = document.querySelector('.name');
  song = document.querySelector('.song');
  backgroundImg = document.querySelector('.background-img');
+ inputSlider = document.querySelector('.time-line');
+ slider = document.querySelector('.current-time')
 
 const albom = [
     {
         name: 'Аид (Пламенев)\nВласть',
         img: 'aid_vlast',
-        audio: '01-vlast'
+        song: '01-vlast'
     },
     {
         name: 'Геката (Зудина)\nБал забвенnия',
@@ -23,22 +25,24 @@ const albom = [
     {
         name: 'Эвридика (Бурлюкало)\nСон',
         img: 'euredika_son',
-        audio: '03-son'
+        song: '03-son'
     },
     {
         name: 'Гермес (Егоров)\nБудь что будет',
         img: 'germes_bud_chto_budet',
-        audio: '04-bud-chto-budet'
+        song: '04-bud-chto-budet'
     },
 ]
 
-let index = 2;
+let index = 0;
 
 function playMusic(){
     nameArtist.innerHTML = albom[index].name
     audio.src = `../audio-player/assets/audio/${albom[index].song}.mp4`
     backgroundImg.src = `../audio-player/assets/png/${albom[index].img}.jpeg`
 }
+
+playMusic()
 
 function playSong(){
     audio.play()
@@ -51,7 +55,6 @@ function pauseSong(){
     play.style.display = 'block'
     pause.style.display = 'none'
 }
-playMusic()
 
 play.addEventListener('click', function(){
     playSong()
@@ -62,96 +65,64 @@ pause.addEventListener('click', function(){
 })
 
 
-// next.addEventListener('click', function(){
-//     index = index > albom.length ? index = 0 : index + 1
-//     // nameArtist.textContent = albom[index].name
-//     // audio.src = albom[index].song
-//     // backgroundImg.src = albom[index].img
-//     play.style.display = 'none'
-//     pause.style.display = 'block'
-//     audio.play()
-//     console.log(index, albom[index].name)
-// })
-// console.log()
+next.addEventListener('click', function(){
+    console.log(index)
+    index = index > albom.length - 2 ? index = 0 : index + 1
+    nameArtist.innerHTML = albom[index].name
+    audio.src = `../audio-player/assets/audio/${albom[index].song}.mp4`
+    backgroundImg.src = `../audio-player/assets/png/${albom[index].img}.jpeg`
+    play.style.display = 'none'
+    pause.style.display = 'block'
+    audio.play()
+    console.log(index, albom[index].name)
+})
 
-// prev.addEventListener('click', function(){
-//     index = index < 0 ? index = 3 : index - 1
-//     nameArtist.textContent = albom[index].name;
-//     audio.src = albom[index].song;
-//     backgroundImg.src = albom[index].img
-//     play.style.display = 'none'
-//     pause.style.display = 'block'
-//     audio.play()
-//     console.log(index)
-// })
+prev.addEventListener('click', function(){
+    console.log(index)
+    index = index <= 0 ? index = 3 : index - 1
+    nameArtist.innerHTML = albom[index].name
+    audio.src = `../audio-player/assets/audio/${albom[index].song}.mp4`
+    backgroundImg.src = `../audio-player/assets/png/${albom[index].img}.jpeg`
+    play.style.display = 'none'
+    pause.style.display = 'block'
+    audio.play()
+    console.log(index)
+})
 
-// const timeControl = document.querySelector('.time-line')
+const timeControl = document.querySelector('.time-line')
 
-// audio.addEventListener('play', function (e){
-//     const currentTime = e.target.currentTime;
-//     const duration = e.target.duration;
-  
+function timeLine(e){
+    const currentTime = e.target.currentTime;
+    const duration = e.target.duration;
 
-//     let currentMin = Math.floor(currentTime / 60);
-//     let currentSec = Math.floor(currentTime % 60);
+    let currentMin = Math.floor(currentTime / 60);
+    let currentSec = Math.floor(currentTime % 60) < 10 ? `0${Math.floor(currentTime % 60)}` : Math.floor(currentTime % 60)
+    timeStart.textContent = `${currentMin}:${currentSec}`;
+    timeLine.value = timeStart
 
-//     // timeControl.style.width = `${progressWidth}%`;
+    let totalMin = Math.floor(duration / 60);
+    let totalSec = Math.floor(duration % 60) < 10 ? `0${Math.floor(duration % 60)}` : Math.floor(duration % 60)
+    timeEnd.textContent = `${totalMin}:${totalSec}`;
+
+    let currentWidth = (currentTime / duration) * 100;
+    slider.style.width = `${currentWidth}%`;
+
+    // console.log(currentWidth)
+
+}
+
+audio.addEventListener('timeupdate', timeLine)
+
+function timeWidth(e){
+    const width = this.clientWidth;
+    const widthX = e.offsetX
+    const widthParrent = audio.duration
+
+    audio.currentTime = widthX/width * widthParrent
+    console.log(widthX, widthParrent)
+}
+
+inputSlider.addEventListener('click', timeWidth)
+   
 
 
-//     // timeEnd.textContent = `${totalMin}:${totalSec}`;
-//     timeStart.textContent = `${currentMin}:${currentSec}`;
-//     let progressWidth = (currentTime / duration) * 100;
-//     timeControl.style.width = `${progressWidth}%`;
-
-
-//     console.log(duration, timeEnd, song)
-
-    
-// })
-// audio.addEventListener("loadeddata", (e) => {
-//     // const currentTime = e.target.currentTime;
-//     const duration = e.target.duration;
-//     let totalMin = Math.floor(duration / 60);
-//     let totalSec = Math.floor(duration % 60);
-//     timeEnd.textContent = `${totalMin}:${totalSec}`;
-// })
-
-
-// // update progress bar width according to music current time
-// mainAudio.addEventListener("timeupdate", (e)=>{
-//     const currentTime = e.target.currentTime; //getting playing song currentTime
-//     const duration = e.target.duration; //getting playing song total duration
-//     let progressWidth = (currentTime / duration) * 100;
-//     progressBar.style.width = `${progressWidth}%`;
-  
-//     let musicCurrentTime = wrapper.querySelector(".current-time"),
-//     musicDuartion = wrapper.querySelector(".max-duration");
-//     mainAudio.addEventListener("loadeddata", ()=>{
-//     // update song total duration
-//     let mainAdDuration = mainAudio.duration;
-//     let totalMin = Math.floor(mainAdDuration / 60);
-//     let totalSec = Math.floor(mainAdDuration % 60);
-//     if(totalSec < 10){ //if sec is less than 10 then add 0 before it
-//     totalSec = `0${totalSec}`;
-//     }
-//     musicDuartion.innerText = `${totalMin}:${totalSec}`;
-//     });
-//     // update playing song current time
-//     let currentMin = Math.floor(currentTime / 60);
-//     let currentSec = Math.floor(currentTime % 60);
-//     if(currentSec < 10){ //if sec is less than 10 then add 0 before it
-//     currentSec = `0${currentSec}`;
-//     }
-//     musicCurrentTime.innerText = `${currentMin}:${currentSec}`;
-//   });
-  
-//   // update playing song currentTime on according to the progress bar width
-//   progressArea.addEventListener("click", (e)=>{
-//     let progressWidth = progressArea.clientWidth; //getting width of progress bar
-//     let clickedOffsetX = e.offsetX; //getting offset x value
-//     let songDuration = mainAudio.duration; //getting song total duration
-     
-//     mainAudio.currentTime = (clickedOffsetX / progressWidth) * songDuration;
-//     playMusic(); //calling playMusic function
-//     playingSong();
-//   });

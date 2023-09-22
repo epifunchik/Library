@@ -94,20 +94,17 @@ h1{
     grid-area: f;
     appearance: none;
     cursor: pointer;
-    border-style: none;
+    border-style: double;
     height: 4px;
     background-color: whitesmoke;
+    border-radius: 15px;
+    overflow: hidden;
 }
-.time-line::-webkit-slider-thumb{
-    background: rgb(17, 6, 113);
-      border: 2px solid rgb(175, 174, 180);
-      border-radius: 10px/100%;
-      cursor: pointer;
-      width: 7px;
-      height: 12px;
-      -webkit-appearance: none;
+.current-time{
+    background-color: #30283b;
+    width: 0px;
+    height: 4px;
 }
-
 .footer{
     display: flex;
     position: relative;
